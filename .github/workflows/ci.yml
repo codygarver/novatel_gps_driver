@@ -13,6 +13,7 @@ jobs:
     container:
       image: usdotfhwastoldev/carma-base:develop
       env:
+        CHECKOUT_PATH: "/opt/carma/src/CARMANovatelGpsDriver"
         INIT_ENV: "/home/carma/.base-image/init-env.sh"
         TERM: xterm # use xterm to get full display output from build
       options: --user root
@@ -26,14 +27,14 @@ jobs:
 
       - name: Checkout
         run: |
-          git clone --depth 1 $GITHUB_SERVER_URL/$GITHUB_REPOSITORY /opt/carma/src/CARMANovatelGpsDriver
-          cd /opt/carma/src/CARMANovatelGpsDriver
+          git clone --depth 1 $GITHUB_SERVER_URL/$GITHUB_REPOSITORY $CHECKOUT_PATH
+          cd $CHECKOUT_PATH
           git checkout -f "$GITHUB_SHA"
 
       - name: Pull deps
         run: |
           source /home/carma/.base-image/init-env.sh
-          bash /opt/carma/src/CARMANovatelGpsDriver/docker/checkout.bash -r /opt/carma
+          bash $CHECKOUT_PATH/docker/checkout.bash -r /opt/carma
 
       - name: Build Driver
         run: |
