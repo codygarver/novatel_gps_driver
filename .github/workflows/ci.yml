@@ -1,11 +1,6 @@
 name: CI Build
 
-on:
-  pull_request:
-    types: [opened, reopened]
-  push:
-    branches:
-      - "develop"
+on: [push, pull_request]
 
 jobs:
   build:
