@@ -57,7 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: ./CARMANovatelGpsDriver
+          projectBaseDir: CARMANovatelGpsDriver
           args: >
             -Dsonar.projectKey=usdot-fhwa-stol_CARMANovatelGpsDriver
             -Dsonar.organization=usdot-fhwa-stol
@@ -68,7 +68,3 @@ jobs:
             -Dsonar.scm.disabled=false
             -Dsonar.scm.enabled=true
             -Dsonar.scm.provider=git
-            -Dsonar.modules=novatel_gps_driver
-            -Dnovatel_gps_driver.sonar.projectBaseDir=CARMANovatelGpsDriver/novatel_gps_driver/src
-            -Dnovatel_gps_driver.sonar.sources=src
-            -Dnovatel_gps_driver.sonar.tests=test
