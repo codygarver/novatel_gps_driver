@@ -45,6 +45,15 @@ jobs:
           cd /opt/carma
           bash make_with_coverage.bash -t -e /opt/carma/ -o /opt/carma/coverage_reports/gcov
 
+      - name: Run C++ Tests
+        run: |
+          echo "/opt/carma"
+          ls /opt/carma
+          echo "/opt/carma/src/"
+          ls /opt/carma/src/
+          echo "/opt/carma/src/CARMANovatelGpsDriver"
+          ls /opt/carma/src/CARMANovatelGpsDriver
+
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
