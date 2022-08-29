@@ -62,9 +62,13 @@ jobs:
             -Dsonar.projectKey=usdot-fhwa-stol_CARMANovatelGpsDriver
             -Dsonar.organization=usdot-fhwa-stol
             -Dsonar.cfamily.build-wrapper-output=bw-output
-            -Dsonar.sources=src/main
+            -Dsonar.sources=CARMANovatelGpsDriver/src/main
             -Dsonar.cfamily.gcov.reportsPath=coverage_reports/gcov
-            -Dsonar.tests=src/test
+            -Dsonar.tests=CARMANovatelGpsDriver/src/test
             -Dsonar.scm.disabled=false
             -Dsonar.scm.enabled=true
             -Dsonar.scm.provider=git
+            -Dsonar.modules=novatel_gps_driver
+            -Dnovatel_gps_driver.sonar.projectBaseDir=CARMANovatelGpsDriver/novatel_gps_driver
+            -Dnovatel_gps_driver.sonar.sources=CARMANovatelGpsDriver/novatel_gps_driversrc
+            -Dnovatel_gps_driver.sonar.tests=CARMANovatelGpsDriver/novatel_gps_drivertest
