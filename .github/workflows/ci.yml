@@ -58,6 +58,8 @@ jobs:
           cp -r /opt/carma/src/CARMANovatelGpsDriver .
           cp -r /opt/carma/bw-output .
           cp -r /opt/carma/coverage_reports .
+          echo "Workspace:"
+          find .
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
