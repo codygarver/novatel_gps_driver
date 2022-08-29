@@ -73,7 +73,3 @@ jobs:
             -Dsonar.scm.disabled=false
             -Dsonar.scm.enabled=true
             -Dsonar.scm.provider=git
-            -Dsonar.modules=novatel_gps_driver
-            -Dnovatel_gps_driver.sonar.projectBaseDir=novatel_gps_driver
-            -Dnovatel_gps_driver.sonar.sources=src
-            -Dnovatel_gps_driver.sonar.tests=test
