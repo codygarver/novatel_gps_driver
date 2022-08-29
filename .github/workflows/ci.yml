@@ -44,3 +44,26 @@ jobs:
           export ROS_PARALLEL_JOBS='-j3 -l3' # Try to reduce memory consumption on build
           cd /opt/carma
           bash make_with_coverage.bash -t -e /opt/carma/ -o /opt/carma/coverage_reports/gcov
+
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: /opt/carma/src/CARMANovatelGpsDriver
+          args: >
+            -Dsonar.projectKey=usdot-fhwa-stol_CARMANovatelGpsDriver
+            -Dsonar.organization=usdot-fhwa-stol
+            -Dsonar.cfamily.build-wrapper-output=/opt/carma/bw-output
+            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.sources=src/main
+            -Dsonar.cfamily.gcov.reportsPath=/opt/carma/coverage_reports/gcov
+            -Dsonar.tests=src/test
+            -Dsonar.scm.disabled=false
+            -Dsonar.scm.enabled=true
+            -Dsonar.scm.provider=git
+            -Dsonar.modules=novatel_gps_driver
+            -Dnovatel_gps_driver.sonar.projectBaseDir=/opt/carma/src/CARMANovatelGpsDriver/novatel_gps_driver
+            -Dnovatel_gps_driver.sonar.sources=src
+            -Dnovatel_gps_driver.sonar.tests=test
