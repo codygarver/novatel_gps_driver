@@ -47,6 +47,14 @@ jobs:
 
       - name: ls content
         run: |
+          echo "/opt/carma"
+          ls /opt/carma
+          echo "/opt/carma/src/"
+          ls /opt/carma/src/
+          echo "/opt/carma/src/CARMANovatelGpsDriver"
+          ls /opt/carma/src/CARMANovatelGpsDriver
+          echo "/opt/carma/src/CARMANovatelGpsDriver/novatel_gps_driver"
+          ls /opt/carma/src/CARMANovatelGpsDriver/novatel_gps_driver
           cp -r /opt/carma/src/CARMANovatelGpsDriver .
           cp -r /opt/carma/bw-output .
           cp -r /opt/carma/coverage_reports .
@@ -57,7 +65,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: CARMANovatelGpsDriver
           args: >
             -Dsonar.projectKey=usdot-fhwa-stol_CARMANovatelGpsDriver
             -Dsonar.organization=usdot-fhwa-stol
@@ -70,5 +77,5 @@ jobs:
             -Dsonar.scm.provider=git
             -Dsonar.modules=novatel_gps_driver
             -Dnovatel_gps_driver.sonar.projectBaseDir=CARMANovatelGpsDriver/novatel_gps_driver
-            -Dnovatel_gps_driver.sonar.sources=CARMANovatelGpsDriver/novatel_gps_driversrc
-            -Dnovatel_gps_driver.sonar.tests=CARMANovatelGpsDriver/novatel_gps_drivertest
+            -Dnovatel_gps_driver.sonar.sources=CARMANovatelGpsDriver/novatel_gps_driver/src
+            -Dnovatel_gps_driver.sonar.tests=CARMANovatelGpsDriver/novatel_gps_driver/test
