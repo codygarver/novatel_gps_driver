@@ -64,7 +64,7 @@ jobs:
             -Dsonar.cfamily.build-wrapper-output=bw-output
             -Dsonar.sources=CARMANovatelGpsDriver/src/main
             -Dsonar.cfamily.gcov.reportsPath=coverage_reports/gcov
-            -Dsonar.tests=CARMANovatelGpsDriver/src/test
+            -Dsonar.tests=CARMANovatelGpsDriver/test
             -Dsonar.scm.disabled=false
             -Dsonar.scm.enabled=true
             -Dsonar.scm.provider=git
