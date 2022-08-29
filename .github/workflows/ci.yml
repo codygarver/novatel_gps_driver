@@ -47,14 +47,9 @@ jobs:
 
       - name: ls content
         run: |
-          echo "/opt/carma"
-          ls /opt/carma
-          echo "/opt/carma/src/"
-          ls /opt/carma/src/
-          echo "/opt/carma/src/CARMANovatelGpsDriver"
-          ls /opt/carma/src/CARMANovatelGpsDriver
-          echo "/opt/carma/src/CARMANovatelGpsDriver/novatel_gps_driver"
-          ls /opt/carma/src/CARMANovatelGpsDriver/novatel_gps_driver
+          cp -r /opt/carma/src/CARMANovatelGpsDriver .
+          cp -r /opt/carma/bw-output .
+          cp -r /opt/carma/coverage_reports .
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
@@ -62,17 +57,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
+          projectBaseDir: ./CARMANovatelGpsDriver
           args: >
             -Dsonar.projectKey=usdot-fhwa-stol_CARMANovatelGpsDriver
             -Dsonar.organization=usdot-fhwa-stol
-            -Dsonar.cfamily.build-wrapper-output=/opt/carma/bw-output
+            -Dsonar.cfamily.build-wrapper-output=bw-output
             -Dsonar.sources=src/main
-            -Dsonar.cfamily.gcov.reportsPath=/opt/carma/coverage_reports/gcov
+            -Dsonar.cfamily.gcov.reportsPath=coverage_reports/gcov
             -Dsonar.tests=src/test
             -Dsonar.scm.disabled=false
             -Dsonar.scm.enabled=true
             -Dsonar.scm.provider=git
             -Dsonar.modules=novatel_gps_driver
-            -Dnovatel_gps_driver.sonar.projectBaseDir=novatel_gps_driver/src
+            -Dnovatel_gps_driver.sonar.projectBaseDir=CARMANovatelGpsDriver/novatel_gps_driver/src
             -Dnovatel_gps_driver.sonar.sources=src
             -Dnovatel_gps_driver.sonar.tests=test
