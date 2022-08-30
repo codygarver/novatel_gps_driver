@@ -59,7 +59,7 @@ jobs:
           find /opt/carma/coverage_reports
           cp -r /opt/carma/src/CARMANovatelGpsDriver .
           cp /opt/carma/coverage_reports/gcov/coverage.xml .
-          cp -r /opt/carma/bw-output .
+          cp -r /opt/carma/bw-output ./CARMANovatelGpsDriver/novatel_gps_driver/
           echo "Workspace:"
           find .
 
@@ -73,7 +73,7 @@ jobs:
           args: >
             -Dsonar.projectKey=usdot-fhwa-stol_CARMANovatelGpsDriver
             -Dsonar.organization=usdot-fhwa-stol
-            -Dsonar.cfamily.build-wrapper-output=../../bw-output
+            -Dsonar.cfamily.build-wrapper-output=w-output
             -Dsonar.sources=src
             -Dsonar.coverageReportPaths=../../coverage.xml
             -Dsonar.tests=test
