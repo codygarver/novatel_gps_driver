@@ -78,6 +78,5 @@ jobs:
             -Dsonar.scm.enabled=true
             -Dsonar.scm.provider=git
             -Dsonar.modules=novatel_gps_driver
-            -Dnovatel_gps_driver.sonar.projectBaseDir=CARMANovatelGpsDriver/novatel_gps_driver
             -Dnovatel_gps_driver.sonar.sources=CARMANovatelGpsDriver/novatel_gps_driver/src
             -Dnovatel_gps_driver.sonar.tests=CARMANovatelGpsDriver/novatel_gps_driver/test
