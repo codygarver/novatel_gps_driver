@@ -55,6 +55,8 @@ jobs:
           ls /opt/carma/src/CARMANovatelGpsDriver
           echo "/opt/carma/src/CARMANovatelGpsDriver/novatel_gps_driver"
           ls /opt/carma/src/CARMANovatelGpsDriver/novatel_gps_driver
+          echo "/opt/carma/coverage_reports"
+          find /opt/carma/coverage_reports
           cp -r /opt/carma/src/CARMANovatelGpsDriver .
           echo "Workspace:"
           find .
