@@ -73,8 +73,6 @@ jobs:
             -Dsonar.organization=usdot-fhwa-stol
             -Dsonar.cfamily.build-wrapper-output=/opt/carma/bw-output
             -Dsonar.sources=src
-            -Dsonar.cfamily.gcov.reportsPath=/opt/carma/coverage_reports/gcov
-            -Dsonar.coverageReportPaths=/opt/carma/coverage_reports/gcov/coverage.xml
             -Dsonar.tests=test
             -Dsonar.scm.disabled=false
             -Dsonar.scm.enabled=true
