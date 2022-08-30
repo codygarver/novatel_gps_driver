@@ -58,7 +58,7 @@ jobs:
           echo "/opt/carma/coverage_reports"
           find /opt/carma/coverage_reports
           cp -r /opt/carma/src/CARMANovatelGpsDriver .
-          cp /opt/carma/coverage_reports/gcov/coverage.xml CARMANovatelGpsDriver/novatel_gps_driver/
+          cp /opt/carma/coverage_reports/gcov/coverage.xml ./CARMANovatelGpsDriver/novatel_gps_driver/
           echo "Workspace:"
           find .
 
