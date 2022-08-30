@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: usdotfhwastoldev/carma-base:buildtime
+      image: usdotfhwastoldev/carma-base:develop
       env:
         INIT_ENV: "/home/carma/.base-image/init-env.sh"
         TERM: xterm # use xterm to get full display output from build
