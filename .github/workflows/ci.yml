@@ -59,7 +59,7 @@ jobs:
           find /opt/carma/coverage_reports
           cp -r /opt/carma/src/CARMANovatelGpsDriver .
           cp /opt/carma/coverage_reports/gcov/coverage.xml .
-          cp -r /opt/carma/bw-output ./CARMANovatelGpsDriver/novatel_gps_driver/
+          cp -r /opt/carma/bw-output .
           echo "Workspace:"
           find .
 
